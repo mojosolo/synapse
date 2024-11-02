@@ -38,14 +38,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <head>
                 <meta
                     name="description"
                     content="Figma UI kit designed to enhance the functionality of ChatGPT"
                 />
                 <meta name="product-name" content="Synapse - AI UI Kit" />
-                {/* Twitter Card data */}
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@ui8" />
                 <meta name="twitter:title" content="Synapse - AI UI Kit" />
@@ -58,7 +57,6 @@ export default function RootLayout({
                     name="twitter:image"
                     content="%PUBLIC_URL%/twitter-card.png"
                 />
-                {/* Open Graph data for Facebook */}
                 <meta property="og:title" content="Synapse - AI UI Kit" />
                 <meta property="og:type" content="Article" />
                 <meta
@@ -75,7 +73,6 @@ export default function RootLayout({
                 />
                 <meta property="og:site_name" content="Synapse - AI UI Kit" />
                 <meta property="fb:admins" content="132951670226590" />
-                {/* Open Graph data for LinkedIn */}
                 <meta property="og:title" content="Synapse - AI UI Kit" />
                 <meta
                     property="og:url"
@@ -89,7 +86,6 @@ export default function RootLayout({
                     property="og:description"
                     content="Figma UI kit designed to enhance the functionality of ChatGPT"
                 />
-                {/* Open Graph data for Pinterest */}
                 <meta property="og:title" content="Synapse - AI UI Kit" />
                 <meta
                     property="og:url"
@@ -106,6 +102,7 @@ export default function RootLayout({
             </head>
             <body
                 className={`${archivo.variable} ${inter.variable} ${sourceCodePro.variable} bg-n-2 font-sans text-body-2 antialiased text-n-7 dark:bg-n-7 dark:text-n-1`}
+                suppressHydrationWarning
             >
                 <Providers>{children}</Providers>
             </body>
