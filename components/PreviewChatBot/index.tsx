@@ -1,15 +1,19 @@
-import { useState } from "react";
+"use client";
+
+import { useContext } from "react";
 import Modal from "@/components/Modal";
 import Icon from "@/components/Icon";
 import Image from "@/components/Image";
 import Message from "@/components/Message";
 import Item from "./Item";
+import { AppContext } from "@/context/AppContext";
 
 type PreviewChatBotProps = {};
 
 const PreviewChatBot = ({}: PreviewChatBotProps) => {
     const [visibleModal, setVisibleModal] = useState<boolean>(false);
     const [message, setMessage] = useState<string>("");
+    const { contextData } = useContext(AppContext);
 
     return (
         <>
@@ -41,13 +45,13 @@ const PreviewChatBot = ({}: PreviewChatBotProps) => {
                             alt=""
                         />
                     </div>
-                    <div className="mb-6 text-h4">UI8 Marketplace</div>
+                    <div className="mb-6 text-h4">{contextData?.botName || "UI8 Marketplace"}</div>
                     <div className="h-0.25 mb-8 -mx-10 bg-n-3 md:-mx-5 md:mb-5 dark:bg-n-5"></div>
                     <div className="flex">
                         <div className="relative shrink-0 w-8 h-8 p-1.5 bg-n-7 rounded-full">
                             <Image
                                 className="w-full"
-                                src="/images/logo-1.svg"
+                                src={contextData?.botImage || "/images/logo-1.svg"}
                                 width={20}
                                 height={20}
                                 alt="Avatar"
@@ -55,10 +59,8 @@ const PreviewChatBot = ({}: PreviewChatBotProps) => {
                         </div>
                         <div className="w-[calc(100%-2rem)] pl-6">
                             <div className="mb-6 text-n-6 dark:text-n-1">
-                                Hello, I’m Synapse a large language model
-                                designed to answer questions and provide
-                                information on a wide range of topics. How can I
-                                assist you today?
+                                {contextData?.welcomeMessage ||
+                                    "Hello, I’m Synapse, a large language model designed to answer questions..."}
                             </div>
                             <div className="mb-6 text-n-6 font-semibold dark:text-n-1">
                                 Here is a few of what I can do for you

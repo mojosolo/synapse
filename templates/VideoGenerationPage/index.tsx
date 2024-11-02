@@ -1,32 +1,38 @@
 "use client";
 
+import { useContext, useEffect } from "react";
 import Layout from "@/components/Layout";
 import Chat from "@/components/Chat";
 import Question from "@/components/Question";
 import Answer from "@/components/Answer";
 import Video from "@/components/Video";
+import { AppContext } from "@/context/AppContext";
 
 const VideoGenerationPage = () => {
+    const { contextData } = useContext(AppContext);
+
     return (
         <Layout>
             <Chat background="/images/bg-2.jpg" typeChat="video">
                 <Question
                     content={
-                        <>
-                            Create a talking avatar for this script: <br></br>{" "}
-                            <br></br>
-                            &quot;Welcome to our new product, the Talking Avatar
-                            Video Creator. With this powerful tool, you can
-                            easily create engaging videos featuring a virtual
-                            spokesperson that delivers your message in a
-                            personalized and natural way. Whether you&apos;re
-                            promoting a product, sharing information about your
-                            business, or delivering a training session, our
-                            AI-powered technology makes it easy to create
-                            professional-looking videos that grab attention and
-                            drive results. Try it out today and see the
-                            difference for yourself!&quot;
-                        </>
+                        contextData?.videoScript || (
+                            <>
+                                Create a talking avatar for this script: <br></br>{" "}
+                                <br></br>
+                                &quot;Welcome to our new product, the Talking Avatar
+                                Video Creator. With this powerful tool, you can
+                                easily create engaging videos featuring a virtual
+                                spokesperson that delivers your message in a
+                                personalized and natural way. Whether you&apos;re
+                                promoting a product, sharing information about your
+                                business, or delivering a training session, our
+                                AI-powered technology makes it easy to create
+                                professional-looking videos that grab attention and
+                                drive results. Try it out today and see the
+                                difference for yourself!&quot;
+                            </>
+                        )
                     }
                     image="/images/file-name.jpg"
                 />

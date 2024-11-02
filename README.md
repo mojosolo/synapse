@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Synapse - AI Chat Application
+
+Synapse is a **Next.js** application that serves as an AI-powered chat platform with functionalities including code generation, audio generation, video generation, and chatbot creation. This project leverages modern technologies to provide an interactive and feature-rich user experience.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Development Server](#running-the-development-server)
+  - [Building for Production](#building-for-production)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Available Scripts](#available-scripts)
+- [Contributing](#contributing)
+- [License](#license)
+- [Learn More](#learn-more)
+
+---
 
 ## Getting Started
 
-This guide https://ui8.notion.site/Project-Setup-af9fa48b613548dd8a5962d126b0265d will help you install Yarn. You can check if Yarn is installed on your PC with the command `yarn --version`
+### Prerequisites
 
-First, run the development server:
+- **Node.js**: Make sure you have Node.js installed (version 16.x or later is recommended). [Download Node.js](https://nodejs.org/)
+- **Yarn**: This project uses Yarn as the package manager. Install it globally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install -g yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+git clone https://github.com/yourusername/synapse.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd synapse
+```
+
+Install the dependencies:
+
+```bash
+yarn install
+```
+
+### Running the Development Server
+
+Start the development server:
+
+```bash
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+### Building for Production
+
+To create an optimized production build:
+
+```bash
+yarn build
+```
+
+To start the production server:
+
+```bash
+yarn start
+```
+
+---
+
+## Features
+
+- **AI-Powered Chat Interface**: Interact with an AI assistant that can answer questions and generate content.
+- **Code Generation**: Generate code snippets in various programming languages.
+- **Audio Generation**: Convert text scripts into audio using text-to-speech technology.
+- **Video Generation**: Create talking avatar videos from provided scripts.
+- **Chatbot Creation**: Build and customize your own chatbots.
+- **Social Media Content Creation**: Generate promotional content for social media platforms.
+- **Responsive Design**: Optimized for various screen sizes and devices.
+
+---
+
+## Project Structure
+
+```
+synapse/
+├── app/                      # Next.js application directory (App Router)
+│   ├── layout.tsx            # Root layout of the app
+│   ├── providers.tsx         # Global providers for state and context
+│   ├── globals.css           # Global CSS styles
+│   ├── page.tsx              # Home page component
+│   ├── [feature]/            # Feature-specific pages
+│   │   ├── page.tsx          # Feature page component
+│   │   └── ...               # Additional feature-specific components and files
+├── components/               # Reusable components
+├── context/                  # React context for global state management
+├── templates/                # Page templates
+├── public/                   # Static assets
+├── styles/                   # Global and component-specific styles
+├── mocks/                    # Mock data for testing
+├── utils/                    # Utility functions and helpers
+├── constants/                # Application constants
+├── types/                    # TypeScript type definitions
+├── package.json              # Project dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
+├── next.config.js            # Next.js configuration
+├── tailwind.config.js        # Tailwind CSS configuration
+└── README.md                 # Project documentation
+```
+
+---
+
+## Technologies Used
+
+- **Next.js 13**: Framework for server-rendered React applications.
+- **React 18**: JavaScript library for building user interfaces.
+- **TypeScript**: Strongly typed programming language that builds on JavaScript.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **Chakra UI**: Modular and accessible component library for React.
+- **Framer Motion**: Animation library for React.
+- **React Hook Form**: Form validation library for React.
+- **React Datepicker**: Date and time picker component for React.
+- **React Syntax Highlighter**: Syntax highlighting component for code blocks.
+- **Vitest**: Fast unit test framework powered by Vite.
+- **Headless UI**: Unstyled, fully accessible UI components.
+- **React Icons**: Include popular icons in your React projects.
+
+---
+
+## Available Scripts
+
+In the project directory, you can run:
+
+- **`yarn dev`**: Runs the app in development mode.
+- **`yarn build`**: Builds the app for production.
+- **`yarn start`**: Runs the built app in production mode.
+- **`yarn lint`**: Runs ESLint to analyze the code for potential errors.
+- **`yarn test`**: Launches the test runner using Vitest.
+
+---
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/YourFeature`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/YourFeature`.
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project, take a look at the following resources:
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**
+  - [Next.js Documentation](https://nextjs.org/docs)
+  - [Learn Next.js](https://nextjs.org/learn)
+- **React**
+  - [React Documentation](https://reactjs.org/docs/getting-started.html)
+- **TypeScript**
+  - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- **Tailwind CSS**
+  - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- **Chakra UI**
+  - [Chakra UI Documentation](https://chakra-ui.com/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to open an issue if you have any questions or suggestions.

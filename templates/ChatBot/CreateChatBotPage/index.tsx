@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Layout from "@/components/Layout";
 import Image from "@/components/Image";
 import Field from "@/components/Field";
 import Select from "@/components/Select";
 import Icon from "@/components/Icon";
 import PreviewChatBot from "@/components/PreviewChatBot";
+import { AppContext } from "@/context/AppContext";
 
 const bots = [
     {
@@ -27,9 +28,14 @@ const bots = [
 ];
 
 const CreateChatBotPage = () => {
-    const [name, setName] = useState<string>("");
-    const [bot, setBot] = useState<any>(bots[0]);
-    const [message, setMessage] = useState<string>("");
+    const { contextData } = useContext(AppContext);
+
+    const [name, setName] = useState<string>(contextData?.botName || "UI8 Bot");
+    const [bot, setBot] = useState<any>(contextData?.bot || bots[0]);
+    const [message, setMessage] = useState<string>(
+        contextData?.welcomeMessage ||
+            "Hello, I’m Synapse, a large language model designed to answer questions..."
+    );
     const [prompt, setPrompt] = useState<string>("");
 
     return (
