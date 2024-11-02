@@ -36,6 +36,13 @@ const Header = ({ visible, onClick }: HeaderProps) => {
             </Link>
             <ChatList items={chatList} />
             <Profile />
+            <nav>
+                <ul>
+                    <li>
+                        <Link href="/agents">Agents</Link>
+                    </li>
+                </ul>
+            </nav>
         </div>
     );
 };
