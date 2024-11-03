@@ -1,0 +1,88 @@
+.composer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: var(--background);
+    border-top: 1px solid var(--n-3);
+    z-index: 10;
+}
+
+.inputWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background: var(--n-1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: var(--n-7);
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--n-4);
+}
+
+.sendButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--p-1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sendButton:hover {
+    background: var(--p-2);
+}
+
+.sendButton.disabled {
+    background: var(--n-3);
+    cursor: not-allowed;
+}
+
+.sendIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--n-1);
+}
+
+.loadingIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--n-1);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark mode support */
+:global(.dark) .input {
+    color: var(--n-1);
+}
+
+:global(.dark) .input::placeholder {
+    color: var(--n-4);
+} 
