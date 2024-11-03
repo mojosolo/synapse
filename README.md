@@ -85,6 +85,21 @@ yarn start
 - **Chatbot Creation**: Build and customize your own chatbots.
 - **Social Media Content Creation**: Generate promotional content for social media platforms.
 - **Responsive Design**: Optimized for various screen sizes and devices.
+- **Agent Factory Interface**: Allows users to interact with the hierarchical agent system.
+
+## How to Use the Agent Factory
+
+1. **Access the Agent Factory:**
+   - Click on "Agent Factory" in the navigation menu.
+
+2. **Enter Your Request:**
+   - Type your instructions or queries into the textarea.
+
+3. **Submit Your Request:**
+   - Click the "Submit" button to send your input to the agent system.
+
+4. **View the Response:**
+   - The output from the agents will be displayed below the submit button.
 
 ---
 
